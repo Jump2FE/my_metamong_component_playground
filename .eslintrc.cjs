@@ -10,6 +10,7 @@ module.exports = {
     "plugin:tailwindcss/recommended",
     "plugin:react/recommended",
     "plugin:import/recommended",
+    "plugin:storybook/recommended",
     "prettier",
   ],
   parser: "@typescript-eslint/parser",
