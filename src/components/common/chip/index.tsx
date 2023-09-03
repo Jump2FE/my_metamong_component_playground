@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 
 const CHIP_COLORS = {
   primary: "#007bff",
@@ -40,6 +40,8 @@ interface ChipProps extends HTMLAttributes<HTMLDivElement> {
   size?: ChipWidthSizeType;
   fontSize?: ChipFontSizeType;
   round?: ChipBorderRadiusType;
+  left?: ReactNode;
+  right?: ReactNode;
 }
 
 export const Chip = ({
@@ -48,6 +50,8 @@ export const Chip = ({
   size = "small",
   fontSize = "medium",
   round = "medium",
+  left,
+  right,
   ...props
 }: ChipProps) => {
   const style = {
@@ -62,7 +66,9 @@ export const Chip = ({
 
   return (
     <div {...props} style={style}>
+      {left}
       <label>{label}</label>
+      {right}
     </div>
   );
 };
