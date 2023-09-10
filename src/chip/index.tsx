@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, useState } from 'react';
 
 // Style
-import { ChipContainer, ChipLeadingImg, ChipLabel, ChipTrailingImg } from './styled';
+import { ChipContainer, ChipLeadingImg, ChipLabel, ChipTrailingImg } from './style';
 
 interface IChip extends PropsWithChildren {
   useSelected?: boolean;
