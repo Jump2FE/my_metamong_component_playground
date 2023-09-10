@@ -11,3 +11,5 @@ $ yarn start
 ```
 
 ## 1회 Chip Component
+
+## 2회 Button Component
