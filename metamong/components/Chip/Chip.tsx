@@ -7,14 +7,16 @@ import { cn } from '../../utils/cn';
 export interface ChipProps extends React.PropsWithChildren {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+
   closable?: boolean;
   closeIcon?: React.ReactNode;
-  onClick?: (e: React.MouseEvent) => void;
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+
+  onClick?: (e: React.MouseEvent) => void;
+
   selected?: boolean;
   disabled?: boolean;
-  // TODO: className, style을 적용할 것인가?
-  // TODO: className, style을 적용한다면 어디까지 적용할 것인가
+
   className?: string;
   style?: React.CSSProperties;
 }
