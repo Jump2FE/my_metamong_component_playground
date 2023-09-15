@@ -6,7 +6,7 @@ import {
   btnShortSizes,
   btnTypes,
 } from '@/components/Button';
-import { useCallback } from 'react';
+import { Fragment, useCallback } from 'react';
 import { FcRefresh } from 'react-icons/fc';
 import { Box } from '../common/Box';
 
@@ -30,13 +30,13 @@ export function Buttons() {
       description="Button 예제 입니다. 사이즈별, 목적별 버튼을 확인할 수 있습니다."
     >
       <div className="flex flex-col gap-3">
-        {btnShortSizes.map((size, rowIndex) => (
-          <>
+        {btnShortSizes.map((size) => (
+          <Fragment key={size}>
             <div className="text-xl">{formatShortToLong(size)}</div>
             <span className="text-xs">(dense, default, ghost, disable 순)</span>
-            <div className="flex gap-4" key={rowIndex}>
-              {btnTypes.map((type, colIndex) => (
-                <Button type={type} size={size} key={`${rowIndex}-${colIndex}`}>
+            <div className="flex gap-4">
+              {btnTypes.map((type) => (
+                <Button type={type} size={size} key={`${size}-${type}`}>
                   Button
                 </Button>
               ))}
@@ -44,7 +44,7 @@ export function Buttons() {
                 Disabled
               </Button>
             </div>
-          </>
+          </Fragment>
         ))}
       </div>
       <div className="flex flex-col gap-3">
