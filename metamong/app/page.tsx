@@ -1,6 +1,7 @@
 import { Buttons } from './examples/Buttons';
 import { Checkboxs } from './examples/Checkboxs';
 import { Chips } from './examples/Chips';
+import { Radios } from './examples/Radios';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Chips />
       <Buttons />
       <Checkboxs />
+      <Radios />
     </div>
   );
 }
