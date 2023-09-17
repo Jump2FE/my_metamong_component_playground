@@ -44,7 +44,10 @@ export function Radio({ size = 'lg', title, value: originalValue = '', disabled 
         'flex items-center w-fit h-fit cursor-pointer', // ? 여기는 이상하게 border에만 cursor-pointer가 잡힘
         disabled && 'cursor-not-allowed',
       )}
+      aria-checked={checked}
+      // ? aria-checked를 어디에 붙여야 하는가
     >
+      // ? 웹 접근성 기준에서 label, input는 안맞는 선택지인가
       <label
         className={cn(
           'inline-block border rounded-full relative',

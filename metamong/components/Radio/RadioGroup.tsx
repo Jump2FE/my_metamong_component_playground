@@ -43,5 +43,9 @@ export function RadioGroup({ children, defaultValue, onChange }: RadioGroupProps
     [innerValue, handleRadioChange],
   );
 
-  return <radioContext.Provider value={value}>{children}</radioContext.Provider>;
+  return (
+    <radioContext.Provider value={value}>
+      <div role="radiogroup">{children}</div>
+    </radioContext.Provider>
+  );
 }
