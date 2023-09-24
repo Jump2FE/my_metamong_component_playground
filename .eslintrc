@@ -12,9 +12,11 @@
     "project": ["./tsconfig.json"]
   },
   "rules": {
+    "no-param-reassign": "off",
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-no-useless-fragment": "off",
     "import/prefer-default-export": "off",
