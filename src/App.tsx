@@ -1,20 +1,24 @@
-import { useState } from 'react';
-
-// Component
-import Button from './button';
+import Modal from 'modal';
+import { useEffect } from 'react';
+import useModal from 'stores/useModal';
 
 const App = () => {
-  const [isFetching] = useState(true);
+  const { openModal } = useModal();
+
+  useEffect(() => {
+    openModal({
+      COMMON: {
+        component: <>COMMON</>,
+        callback() {
+          console.log('Call Back');
+        },
+      },
+    });
+  }, [openModal]);
 
   return (
     <>
-      <Button isFetching disabled={isFetching} bgColor="#82ffdaab" />
-      <Button isFetching={false} bgColor="#82ffdaab">
-        Click
-      </Button>
-      <Button isFetching={false} hoverOption={{ bgColor: '#fff' }}>
-        Click
-      </Button>
+      <Modal />
     </>
   );
 };
