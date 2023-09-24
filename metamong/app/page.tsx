@@ -1,6 +1,7 @@
 import { Buttons } from './examples/Buttons';
 import { Checkboxs } from './examples/Checkboxs';
 import { Chips } from './examples/Chips';
+import { Modals } from './examples/Modals';
 import { Radios } from './examples/Radios';
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <Buttons />
       <Checkboxs />
       <Radios />
+      <Modals />
     </div>
   );
 }
