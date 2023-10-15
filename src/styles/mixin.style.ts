@@ -21,6 +21,12 @@ export const flexDirection = (
   align-items: ${ai};
 `;
 
+export const clearFix = () => `&:after {
+        content: '';
+        display: block;
+        clear: both;
+    }`;
+
 export const inlineblock = (va = 'top') => css`
   display: inline-block;
   vertical-align: ${va};
@@ -70,6 +76,11 @@ export const font = (
 
 export const lineHeight = (fontSizePx: number, lineHeightPx: number) => `
   line-height: ${lineHeightPx / fontSizePx};
+`;
+
+export const inlineBlockBox = (verticalAlign = 'top') => css`
+  display: inline-block;
+  vertical-align: ${verticalAlign};
 `;
 
 export const mediaQuery = (
