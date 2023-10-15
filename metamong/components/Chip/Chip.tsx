@@ -7,14 +7,16 @@ import { cn } from '../../utils/cn';
 export interface ChipProps extends React.PropsWithChildren {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
+
   closable?: boolean;
   closeIcon?: React.ReactNode;
-  onClick?: (e: React.MouseEvent) => void;
   onClose?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+
+  onClick?: (e: React.MouseEvent) => void;
+
   selected?: boolean;
   disabled?: boolean;
-  // TODO: className, style을 적용할 것인가?
-  // TODO: className, style을 적용한다면 어디까지 적용할 것인가
+
   className?: string;
   style?: React.CSSProperties;
 }
@@ -22,12 +24,11 @@ export interface ChipProps extends React.PropsWithChildren {
 const commonClass =
   'h-[26px] text-2 rounded-md flex justify-center gap-2 items-center ease-in-out duration-130 transition-colors whitespace-nowrap';
 
-const selectedClassMap: Record<'selected' | 'deselected' | 'disabled', string> =
-  {
-    selected: 'bg-blue-600 text-white',
-    deselected: 'bg-default border border-line',
-    disabled: 'bg-gray-400 text-white cursor-not-allowed',
-  };
+const selectedClassMap: Record<'selected' | 'deselected' | 'disabled', string> = {
+  selected: 'bg-blue-600 text-white',
+  deselected: 'bg-default border border-line',
+  disabled: 'bg-gray-400 text-white cursor-not-allowed',
+};
 
 export function Chip({
   startIcon,
@@ -48,12 +49,7 @@ export function Chip({
     : ('deselected' as const);
   return (
     <div
-      className={cn(
-        commonClass,
-        selectedClassMap[key],
-        closable ? 'pl-3' : 'px-3',
-        className,
-      )}
+      className={cn(commonClass, selectedClassMap[key], closable ? 'pl-3' : 'px-3', className)}
       onClick={onClick}
       style={style}
     >
@@ -65,9 +61,7 @@ export function Chip({
           className={cn(
             'h-full pl-3 pr-2 flex items-center bg-[#0000] p-0 ',
             selected ? 'text-white' : 'text-blue-600',
-            !disabled
-              ? 'cursor-pointer'
-              : 'cursor-not-allowed pointer-events-none',
+            !disabled ? 'cursor-pointer' : 'cursor-not-allowed pointer-events-none',
           )}
           onClick={(e) => onClose?.(e)}
         >
