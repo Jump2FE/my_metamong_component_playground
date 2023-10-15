@@ -28,6 +28,7 @@ export const Card = ({
   ...props
 }: CardProps) => {
   const style = {
+    color: THEME_COLORS[color === "light" ? "dark" : "light"],
     backgroundColor: THEME_COLORS[color],
     minWidth: WIDTHS[size],
     width: "fit-content",
@@ -39,17 +40,13 @@ export const Card = ({
   };
 
   const headerStyle = {
-    borderBottom: `1px solid ${THEME_COLORS.dark}`,
     paddingBottom: "0.5rem",
     marginBottom: "0.5rem",
-    color: THEME_COLORS.dark,
   };
 
   const footerStyle = {
-    borderTop: `1px solid ${THEME_COLORS.dark}`,
     paddingTop: "0.5rem",
     marginTop: "0.5rem",
-    color: THEME_COLORS.dark,
   };
 
   return (
