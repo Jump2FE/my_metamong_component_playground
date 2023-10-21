@@ -2,6 +2,7 @@ import AppLayout from 'components/AppLayout/AppLayout';
 import './App.css';
 import AppRoutes from 'routes';
 import Sidebar from 'components/Sidebar/Sidebar';
+import ModalList from 'components/Modal/ModalList/ModalList';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <AppRoutes />
         </AppLayout.Main>
       </AppLayout>
+      <ModalList />
     </div>
   );
 }

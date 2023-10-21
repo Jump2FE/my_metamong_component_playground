@@ -23,6 +23,12 @@ export default function Sidebar() {
             <span>BUTTON</span>
           </S.MenuLink>
         </S.MenuItem>
+        <S.MenuItem>
+          <S.MenuLink to="/modal">
+            <Icon name="more" />
+            <span>MODAL</span>
+          </S.MenuLink>
+        </S.MenuItem>
       </S.MenuWrapper>
     </S.SideBarWrapper>
   );
