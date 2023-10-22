@@ -20,7 +20,9 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
     'import/no-unresolved': 'off',
     'import/order': [
       'warn',
