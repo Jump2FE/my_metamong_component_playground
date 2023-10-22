@@ -1,19 +1,45 @@
 import { HTMLAttributes, ReactNode } from "react";
 
-import { THEME_COLORS, WIDTHS, FONT_SIZES, BORDER_RADII } from "@/theme";
-import type {
-  BorderRadiusType,
-  FontSizeType,
-  ThemeColorType,
-  WidthSizeType,
-} from "@/theme";
+const CHIP_COLORS = {
+  primary: "#007bff",
+  secondary: "#6c757d",
+  success: "#28a745",
+  danger: "#dc3545",
+  warning: "#ffc107",
+  info: "#17a2b8",
+  light: "#f8f9fa",
+  dark: "#343a40",
+};
+
+const FONT_SIZES = {
+  small: "0.75rem",
+  medium: "1rem",
+  large: "1.25rem",
+};
+
+const WIDTHS = {
+  small: "3rem",
+  medium: "4rem",
+  large: "5rem",
+};
+
+const BORDER_RADII = {
+  small: "1rem",
+  medium: "1.5rem",
+  large: "2rem",
+};
+
+export type ChipColorType = keyof typeof CHIP_COLORS;
+export type ChipWidthSizeType = keyof typeof WIDTHS;
+export type ChipFontSizeType = keyof typeof FONT_SIZES;
+export type ChipBorderRadiusType = keyof typeof BORDER_RADII;
 
 interface ChipProps extends HTMLAttributes<HTMLDivElement> {
   label: string;
-  color?: ThemeColorType;
-  size?: WidthSizeType;
-  fontSize?: FontSizeType;
-  round?: BorderRadiusType;
+  color?: ChipColorType;
+  size?: ChipWidthSizeType;
+  fontSize?: ChipFontSizeType;
+  round?: ChipBorderRadiusType;
   left?: ReactNode;
   right?: ReactNode;
 }
@@ -29,7 +55,7 @@ export const Chip = ({
   ...props
 }: ChipProps) => {
   const style = {
-    backgroundColor: THEME_COLORS[color],
+    backgroundColor: CHIP_COLORS[color],
     minWidth: WIDTHS[size],
     width: "fit-content",
     textAlign: "center" as const,
